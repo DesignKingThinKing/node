@@ -1,8 +1,18 @@
 var express = require('express')
 var app = express()
-var bodyParser = require('body-parser')
+var bodyParser=require('body-parser')
 
-app.use(bodyParser.urlencoded({ extended: true }))
+//body parser 사용
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.get('/', function (req, res) {
+    res.send("Hello, World!")
+})
+
+app.get('/pass', function (req, res) {
+    var data=req.query.data
+    res.send(data)
+})
 
 //mysql 모듈 불러오기
 var mysql = require('mysql')
@@ -15,7 +25,6 @@ var connection = mysql.createConnection({
     password : "1234", //계정 비밀번호
     database : "test" //접속할 DB
 })
-
 
 //mysql 접속
 connection.connect()
