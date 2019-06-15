@@ -1,0 +1,466 @@
+{
+  "name": "hoonihooni",
+  "intents": [
+    {
+      "intent": "Love_Song",
+      "examples": [
+        {
+          "text": "좋아해"
+        },
+        {
+          "text": "사랑해"
+        },
+        {
+          "text": "사랑노래 추천해줘"
+        },
+        {
+          "text": "좋아하는 사람이 생겼어"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Sad_Song",
+      "examples": [
+        {
+          "text": "상혁이도 바보야"
+        },
+        {
+          "text": "슬퍼"
+        },
+        {
+          "text": "슬프다"
+        },
+        {
+          "text": "나 우울해"
+        },
+        {
+          "text": "누굴 죽여버리고 싶어"
+        },
+        {
+          "text": "모든 사람들이 나를 싫어하는거같아"
+        },
+        {
+          "text": "인생은 쓰다"
+        },
+        {
+          "text": "의준이는 바보야"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Musical_Song",
+      "examples": [
+        {
+          "text": "팬텀"
+        },
+        {
+          "text": "웃는남자"
+        },
+        {
+          "text": "뮤지컬 노래 추천해줘"
+        },
+        {
+          "text": "빨래"
+        },
+        {
+          "text": "지킬앤하이드"
+        },
+        {
+          "text": "엑스칼리버"
+        },
+        {
+          "text": "난 뮤지컬을 좋아해"
+        },
+        {
+          "text": "벤허"
+        },
+        {
+          "text": "프랑켄슈타인"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Happy_Song",
+      "examples": [
+        {
+          "text": "기분 좋아지는 노래 추천해줘'"
+        },
+        {
+          "text": "행복하다"
+        },
+        {
+          "text": "나 오늘 너무 즐거워"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Recommend_song",
+      "examples": [
+        {
+          "text": "I want recommend song"
+        },
+        {
+          "text": "노래 추천해줘"
+        }
+      ],
+      "description": "song recommend"
+    },
+    {
+      "intent": "IU_Song",
+      "examples": [
+        {
+          "text": "아이유 노래 중 슬픈걸로"
+        },
+        {
+          "text": "난 아이유가 좋아"
+        },
+        {
+          "text": "IU"
+        },
+        {
+          "text": "아이유"
+        },
+        {
+          "text": "아이유 노래 추천해줘"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Musical_Song",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "모두의 세계",
+          "synonyms": [
+            "박강현 - 모두의 세계"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "너에게 건다",
+          "synonyms": [
+            "한지상 - 너에게 건다"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "누가 죄인인가",
+          "synonyms": [
+            "정성화 - 누가 죄인인가"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "그 어디에",
+          "synonyms": [
+            "임태경 - 그 어디에"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "지금 이 순간",
+          "synonyms": [
+            "홍광호 - 지금 이 순간"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "너의 꿈 속에서",
+          "synonyms": [
+            "박은태 - 너의 꿈 속에서"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "init_Rec",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "데스노트",
+          "synonyms": [
+            "홍광호 - 데스노트"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "IU_Song",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "JeJe",
+          "synonyms": [
+            "JeJe - 아이유"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Happy_Song",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "그냥 니가 좋아",
+          "synonyms": [
+            "그냥 니가 좋아 - 홍대광"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Love_Song",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "참 예뻐요",
+          "synonyms": [
+            "참예버요",
+            "참예뻐요"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Sad_Song",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "너를사랑한시간",
+          "synonyms": [
+            "정승환 - 너를 사랑한시간"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "ko",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "행복",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "그냥 니가 좋아 - 홍광호"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1560586594456",
+      "metadata": {},
+      "dialog_node": "node_2_1560597622875"
+    },
+    {
+      "type": "standard",
+      "title": "기타",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "알아듣기 쉽게 다시 말씀해주시면 좋겠어요."
+              },
+              {
+                "text": "다시 말씀해주시겠어요? 이해가 잘 안 되네요."
+              },
+              {
+                "text": "무슨 뜻인지 모르겠어요."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "기타",
+      "previous_sibling": "node_7_1560598348405"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "그냥 니가 좋아 - 홍광호"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Happy_Song || @Happy_Song",
+      "dialog_node": "node_3_1560597645321",
+      "previous_sibling": "node_1_1560586594456"
+    },
+    {
+      "type": "standard",
+      "title": "노래추천",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "데스노트 - 홍광호"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Recommend_song || @init_Rec",
+      "dialog_node": "node_1_1560586594456",
+      "previous_sibling": "환영 인사"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "JeJe - IU"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#IU_Song || @IU_Song",
+      "dialog_node": "node_7_1560598348405",
+      "previous_sibling": "node_6_1560598292380"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "모두의 세계 - 박강현"
+              },
+              {
+                "text": "너의 꿈속에서 - 박은태"
+              },
+              {
+                "text": "너에게 건다 - 한지상"
+              },
+              {
+                "text": "지금 이 순간 - 홍광호"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Musical_Song || @Musical_Song",
+      "dialog_node": "node_6_1560598292380",
+      "previous_sibling": "node_5_1560598265155"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "참 예뻐요 - 홍광호"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Love_Song || @Love_Song",
+      "dialog_node": "node_5_1560598265155",
+      "previous_sibling": "node_4_1560598220264"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "너를 사랑한 시간 - 정승환"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#Sad_Song || @Sad_Song",
+      "dialog_node": "node_4_1560598220264",
+      "previous_sibling": "node_3_1560597645321"
+    },
+    {
+      "type": "standard",
+      "title": "환영 인사",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "하이루~ 나는 끼리야~"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "환영 인사"
+    }
+  ],
+  "workspace_id": "d2230be1-df9d-4cc3-991e-40161860c3e1",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}

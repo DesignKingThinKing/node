@@ -21,7 +21,14 @@ connection.connect()
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.get('/', function (req, res) {
-    res.send("Hello, World!")
+    //res.send("Hello, World!")
+    // var file=require('./sample.json')
+    // res.json(file)    
+    var fs=require('fs');
+    var data=fs.readFileSync('./sample.json')
+    var jsondata=JSON.parse(data)
+    res.json(jsondata.intents)
+
 })
 
 //select all
