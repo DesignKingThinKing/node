@@ -2,18 +2,6 @@ var express = require('express')
 var app = express()
 var bodyParser=require('body-parser')
 
-//body parser 사용
-app.use(bodyParser.urlencoded({extended:true}))
-
-app.get('/', function (req, res) {
-    res.send("Hello, World!")
-})
-
-app.get('/pass', function (req, res) {
-    var data=req.query.data
-    res.send(data)
-})
-
 //mysql 모듈 불러오기
 var mysql = require('mysql')
 
@@ -29,8 +17,24 @@ var connection = mysql.createConnection({
 //mysql 접속
 connection.connect()
 
-// user 라우터
-app.post('/user', function (req, res) {
+//body parser 사용
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.get('/', function (req, res) {
+    res.send("Hello, World!")
+})
+
+//select all
+app.get('/user', function (req, res) {
+    var query = connection.query('select * from user',function(err,rows){
+        console.log(rows);
+        res.json(rows);
+    });
+    console.log(query);
+})
+
+//insert user
+app.post('/add', function (req, res) {
 
     var userID = req.body.id
     var userPW = req.body.pw
