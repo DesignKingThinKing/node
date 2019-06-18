@@ -20,15 +20,11 @@ connection.connect()
 //body parser 사용
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.get('/', function (req, res) {
-    //res.send("Hello, World!")
-    // var file=require('./sample.json')
-    // res.json(file)    
+app.get('/', function (req, res) {  
     var fs=require('fs');
     var data=fs.readFileSync('./sample.json')
     var jsondata=JSON.parse(data)
     res.json(jsondata.intents)
-
 })
 
 //select all
@@ -63,6 +59,35 @@ app.post('/add', function (req, res) {
     }
 
 })
+
+//example code
+let users=[
+    {
+        id:1,
+        name:'alice'
+    },
+    {
+        id:2,
+        name:'bek'
+    }
+]
+app.get('/users', (req, res)=>{
+    console.log('??');
+    res.json(users)
+});
+app.post('/post', (req, res) => {
+
+    console.log("who get in here post /users");
+    var inputData;
+    req.on('data', (data) => {
+      inputData = JSON.parse(data);
+    });
+    req.on('end', () => {
+      console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+    });
+    res.write("OK!");
+    res.end();
+ });
 
 //서버 시작
 app.listen(8080, function () {
