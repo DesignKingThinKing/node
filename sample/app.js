@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 
 //select all
 app.get('/user', function (req, res) {
-    var query = connection.query('select * from user',function(err,rows){
+    var query = connection.query('select * from json',function(err,rows){
         console.log(rows);
         res.json(rows);
     });
@@ -39,55 +39,47 @@ app.get('/user', function (req, res) {
 //insert user
 app.post('/add', function (req, res) {
 
-    var userID = req.body.id
-    var userPW = req.body.pw
+    var intent = req.body.intent
+    var examples = req.body.examples
 
-    if(userID && userPW) { // userID와 userPW가 유효하다면
+    if(intent && examples) { // userID와 userPW가 유효하다면
 
         //SQL문 실행
-        connection.query("INSERT INTO user (userID, userPW) VALUES ('"+ userID +"', '"+userPW+"')" , 
+        connection.query("INSERT INTO json (intent, examples) VALUES ('"+ intent +"', '"+examples+"')" , 
             function (error, result, fields) {
 
             if (error) { //에러 발생시
                 res.send('err : ' + error)
             }
             else { //실행 성공
-                console.log( userID + ',' + userPW )
-                res.send('success create user name: '+ userID +' pw: ' + userPW)
+                console.log( intent + ',' + examples )
+                res.send('success create intent: '+ intent +' example: ' +examples)
             }
         })
     }
 
 })
 
-//example code
-let users=[
-    {
-        id:1,
-        name:'alice'
-    },
-    {
-        id:2,
-        name:'bek'
-    }
-]
-app.get('/users', (req, res)=>{
-    console.log('??');
-    res.json(users)
-});
-app.post('/post', (req, res) => {
+// //example code
+// let users=[
+//     {
+//         id:1,
+//         name:'alice'
+//     },
+//     {
+//         id:2,
+//         name:'bek'
+//     }
+// ]
+// //단순히 http://localhost:3000/users로 접근하면 users라는 객체를 json으로 response하라는 의미입니다.
 
-    console.log("who get in here post /users");
-    var inputData;
-    req.on('data', (data) => {
-      inputData = JSON.parse(data);
-    });
-    req.on('end', () => {
-      console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
-    });
-    res.write("OK!");
-    res.end();
- });
+// app.get('/users', (req, res) => {
+
+//     console.log("who get in here/users");
+ 
+//     res.json(users)
+ 
+//  });
 
 //서버 시작
 app.listen(8080, function () {
